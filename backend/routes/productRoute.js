@@ -12,6 +12,6 @@ router.put('/admin/products/:id',isAuthenticatedUser,authorizeRoles("admin"),pro
 router.delete('/admin/products/:id',isAuthenticatedUser,authorizeRoles("admin"),productController.deleteProduct)
 router.get('/products/:id',productController.getProductDetails)
 router.get('/reviews',productController.getProductReviews)
-router.delete('/products/reviews',isAuthenticatedUser,productController.deleteReview)
+router.delete('/reviews',isAuthenticatedUser,productController.deleteReview)
 
 module.exports = router;

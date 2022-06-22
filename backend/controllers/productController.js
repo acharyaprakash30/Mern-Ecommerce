@@ -114,7 +114,6 @@ exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
     success: true,
   });
 });
-
 //get all reviews of a product
 exports.getProductReviews = catchAsyncErrors(async (req, res, next) => {
   const product = await Product.findById(req.query.id);
@@ -128,6 +127,7 @@ exports.getProductReviews = catchAsyncErrors(async (req, res, next) => {
 });
 // Delete Review
 exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
+
   const product = await Product.findById(req.query.productId);
 
   if (!product) {
@@ -137,7 +137,6 @@ exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
   const reviews = product.reviews.filter(
     (rev) => rev._id.toString() !== req.query.id.toString()
   );
-
   let avg = 0;
 
   reviews.forEach((rev) => {

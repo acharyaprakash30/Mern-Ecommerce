@@ -3,7 +3,12 @@ var bodyParser = require('body-parser')
 const errorMiddleware = require("./middleware/error");
 const app = express();
 const cookieParser = require('cookie-parser');
+const fileupload = require('express-fileupload');
 
+
+app.use(fileupload(
+    {useTempFiles:true}
+));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))

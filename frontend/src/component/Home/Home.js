@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from 'react'
 import { CgMouse } from 'react-icons/cg'
-import Product from './Product.js'
+import Product from './ProductCard.js'
 import MetaData from '../layout/MetaData.js'
 import {getProducts} from '../../actions/productAction'
 import {useSelector, useDispatch} from 'react-redux'

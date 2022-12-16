@@ -22,10 +22,10 @@ exports.getProductDetails = catchAsyncErrors(async (req, res, next) => {
     product,
   });
 });
-exports.getAllProducts = catchAsyncErrors(async (req, res,next) => {
-  const resultPerPage = 8;
-  const productsCount = await Product.countDocuments();
 
+exports.getAllProducts = catchAsyncErrors(async (req, res,next) => {
+  const resultPerPage = 5;
+  const productsCount = await Product.countDocuments();
   const apiFeature = new ApiFeatures(Product.find(), req.query)
     .search()
     .filter()
